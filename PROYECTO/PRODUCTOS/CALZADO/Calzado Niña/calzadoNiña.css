@@ -1,0 +1,231 @@
+html{
+    font-size: 62.5%
+}
+
+.venta{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    margin: 5rem 15rem 5rem 15rem;
+}
+
+.ropa img{
+    width: max-content;
+    height: 65rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: lightgrey;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding-top: 3rem;
+    font-size: 2rem;
+    line-height:  6rem;
+    font-family: 'Concert One', cursive;
+}
+
+h1{
+    text-align: center;
+    padding-top: 3rem;
+    font-family: 'Holtwood One SC', serif;
+}
+
+.texto .n1{
+    line-height: 1;
+}
+
+.texto .n2{
+    font-size: 2.7rem;
+}
+
+.colores{
+    display: flex;
+    justify-content: center;
+    margin-right: 1rem;
+    margin-top: 0.4rem;
+    gap: 1rem;
+}
+
+.cafe{
+    background-color: rgb(80, 46, 6) ;
+    border-radius: .5rem;
+}
+
+.vinotinto{
+    background-color: rgb(92, 9, 9) ;
+    border-radius: .5rem;
+}
+
+.coral{
+    background-color: #E4717A ;
+    border-radius: .5rem;
+}
+
+.azul-oscuro{
+    background-color: #010133 ;
+    border-radius: .5rem;
+}
+
+.negro{
+    background-color: #000000 ;
+    border-radius: .5rem;
+}
+
+.azul-cobalto{
+    background-color: #333c87 ;
+    border-radius: .5rem;
+}
+
+.azul-rey{
+    background-color: blue;
+    border-radius: .5rem;
+}
+
+.naranja{
+    background-color: orangered;
+    border-radius: .5rem;
+}
+
+.rojo{
+    background-color: red;
+    border-radius: .5rem;
+}
+
+.fucsia{
+    background-color: rgb(255, 0, 179);
+    border-radius: .5rem;
+}
+
+.rosado{
+    background-color: pink;
+    border-radius: .5rem;
+}
+
+.verde{
+    background-color: rgb(69, 161, 69);
+    border-radius: .5rem;
+}
+
+.violeta{
+    background-color: rgb(177, 113, 207);
+    border-radius: .5rem;
+}
+
+.morado-claro{
+    background-color: rgb(180, 133, 218);
+    border-radius: .5rem;
+}
+
+.rosadoo{
+    background-color: rgb(255, 113, 184);
+    border-radius: .5rem;
+}
+
+.blanco{
+    background-color: white;
+    border-radius: .5rem;
+}
+
+.amarillo-claro{
+    background-color: rgb(179, 179, 66);
+    border-radius: .5rem;
+}
+
+.gris{
+    background-color: grey;
+    border-radius: .5rem;
+}
+
+.coral-oscuro{
+    background-color: rgba(199, 85, 85, 0.829);
+    border-radius: .5rem;
+}
+
+.celeste-claro{
+    background-color: lightblue;
+    border-radius: .5rem;
+}
+
+.morado-oscuro{
+    background-color: rgba(50, 52, 155, 0.808);
+    border-radius: .5rem;
+}
+
+.rojo-oscuro{
+    background-color: rgb(202, 31, 31);
+    border-radius: .5rem;
+}
+
+.azul-medio{
+    background-color: rgb(33, 33, 119);
+    border-radius: .5rem;
+}
+
+.celeste{
+    background-color: rgb(74, 249, 255);
+    border-radius: .5rem;
+}
+
+.cobre{
+    background-color: #CB6D51;
+    border-radius: .5rem;
+}
+
+.piel{
+    background-color: #d9b59c;
+    border-radius: .5rem;
+}
+
+.verde-marino{
+    background-color: #1b7161;
+    border-radius: .5rem;
+}
+
+.gris-claro{
+    background-color: rgb(172, 141, 141);
+    border-radius: .5rem;
+}
+
+.cafe, .vinotinto, .coral, .azul-oscuro, .negro, .azul-cobalto, .azul-rey, .naranja, .rojo, .fucsia, .rosado, .verde, .violeta, .morado-claro, .rosadoo, .blanco, .amarillo-claro, .gris, .coral-oscuro, .celeste-claro, .morado-oscuro, .rojo-oscuro, .azul-medio, .celeste, .cobre, .verde-marino, .piel, .gris-claro{
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.main-foot{
+    display: flex;
+    gap: 1rem;
+    background-color: black;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    justify-content: center;
+}
+
+.main-foot, .fin{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.mf{
+    text-decoration: none;
+    color: white;
+    font-family: "Concert One", cursive;
+    font-size: 1.5rem;
+}
+
+.LTDA{
+    background-color: black;
+    padding-bottom: 1rem;
+    text-align: center;
+    padding-left:5rem;
+}
+
+.barra{
+    font-size: 2rem;
+}

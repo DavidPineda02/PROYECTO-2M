@@ -4,8 +4,8 @@ html{
 
 .venta{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     column-gap: 2rem;
     row-gap: 2rem;
     margin: 5rem 15rem 5rem 15rem;
@@ -13,7 +13,7 @@ html{
 
 .ropa img{
     width: max-content;
-    height: 65rem;
+    height: 40rem;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
 }

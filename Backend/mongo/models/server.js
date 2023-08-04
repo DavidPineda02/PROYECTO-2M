@@ -7,8 +7,10 @@ class Server {
         this.app = express();
         this.port = process.env.PORT
         this.paths = {
-            authPath:       '/auth',
-            usuariosPath:   '/usuarios',
+            auth:       '/auth',
+            usuarios:   '/usuarios',
+            search:     '/search',
+            uploads:    '/uploads'
         }
         
         //Conectar a base de datos MONGODB
@@ -34,11 +36,19 @@ class Server {
 
         //PUBLIC DIRECTORY
         this.app.use(express.static('public'));
+
+        // Fileupload 
+        this.app.use(fileUpload({
+            useTempFiles : true,
+            tempFileDir : '/tmp/'
+        }));
     }
 
     routes(){
-        this.app.use(this.paths.authPath, require('../routes/auth.routes.js'));
-        this.app.use(this.paths.usuariosPath, require('../routes/usuario.routes.js'));
+        this.app.use(this.paths.auth, require('../routes/auth.routes.js'));
+        this.app.use(this.paths.usuarios, require('../routes/usuario.routes.js'));
+        this.app.use(this.paths.search, require('../routes/search.routes.js'));
+        this.app.use(this.paths.uploads, require('../routes/upload.routes.js'));
     }
 
     listen(){

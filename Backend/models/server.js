@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const {dbConnection} = require('../database/config.js');
+const fileUpload = require('express-fileupload');
 class Server {
 
     constructor(){
@@ -10,7 +11,8 @@ class Server {
             auth:       '/auth',
             usuarios:   '/usuarios',
             search:     '/search',
-            uploads:    '/uploads'
+            uploads:    '/uploads',
+            calzados:   '/calzado'
         }
         
         //Conectar a base de datos MONGODB
@@ -49,6 +51,7 @@ class Server {
         this.app.use(this.paths.usuarios, require('../routes/usuario.routes.js'));
         this.app.use(this.paths.search, require('../routes/search.routes.js'));
         this.app.use(this.paths.uploads, require('../routes/upload.routes.js'));
+        this.app.use(this.paths.calzados, require('../routes/calzado.routes.js'))
     }
 
     listen(){

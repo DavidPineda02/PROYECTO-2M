@@ -19,5 +19,5 @@ const uploadFile = async(req, res = response) => {
 }
 
 module.exports = {
-    uploadFile
+  uploadFile
 }

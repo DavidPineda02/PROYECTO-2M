@@ -1,8 +1,10 @@
 const Calzado = require('../models/Calzado.js');
-const Usuario = require('../models/Usuario.js');
+const { response } = require('express');
 
-const getCalzado = async (req, res) =>{
-    const calzado = await Calzado.findOne({_id: req.params.id});
+const getCalzado = async (req, res = response ) =>{
+    const calzado = await Calzado.findOne({_id: req.params.id})
+        .populate('usuario', 'nombre')
+        .populate('tipoCalzado', 'nombre')
     if (calzado.estado == { estado: false}){
         res.json({
             "message": "El calzado esta agotado"
@@ -12,14 +14,16 @@ const getCalzado = async (req, res) =>{
     }
 }
 
-const getCalzados = async (req, res) =>{
+const getCalzados = async (req, res = response) =>{
     const { hasta, donde } = req.query;
     const query = { estado: true };
     const [ total, calzados ] = await Promise.all([
         Calzado.countDocuments(query),
         Calzado.find(query)
-            .skip( Number (desde))
-            .limit( Number (hasta))
+            .populate('usuario', 'nombre')
+            .populate('tipoCalzado', 'nombre')
+            .skip( Number (hasta))
+            .limit( Number (donde))
     ]);
     res.json({
         total, 
@@ -27,7 +31,7 @@ const getCalzados = async (req, res) =>{
     });
 }
 
-const postCalzados = async (req, res) =>{
+const postCalzados = async (req, res = response) =>{
     const { modelo, precio, color, talla, inventario } = req.body;
     const calzado = new Calzado({modelo, precio, color, talla, inventario});
     await calzado.save();
@@ -37,13 +41,13 @@ const postCalzados = async (req, res) =>{
     });
 }
 
-const deleteCalzado = async (req, res) =>{
+const deleteCalzado = async (req, res = response) =>{
     const { id } = req.params;
     const calzado = await Calzado.findByIdAndUpdate(id, { estado: false });
     res.json(calzado);
 }
 
-const putCalzado = async (req, res) =>{
+const putCalzado = async (req, res = response) =>{
     const { id } = req.params;
     const { modelo, precio, color, ...resto } = req.body;
     const calzado = await Calzado.findByIdAndUpdate( id, resto, { new: true });

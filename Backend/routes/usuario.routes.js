@@ -30,6 +30,7 @@ router.post("/add",
 
         router.put("/upd/:id",
         [
+                validateJWT,
                 check('id', 'No es un ObjectID MongoDB válido').isMongoId(),
                 check('id').custom( userExistsById ),
                 check('rol').custom(isValidRole),

@@ -1,6 +1,11 @@
 const {Schema, model} = require('mongoose');
 
 const CalzadoSchema = Schema({
+    usuario: {
+        type: Schema.Types.ObjectId,
+        ref: 'Usuario',
+        required: true
+    },
     modelo: {
         type: String,
         required: [true, 'Model is required']
@@ -32,12 +37,7 @@ const CalzadoSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'TipoCalzado',
         required: true
-    },
-    usuario: {
-        type: Schema.Types.ObjectId,
-        ref: 'Usuario',
-        required: true
-    },
+    }
 });
 
 module.exports = model ('Calzado', CalzadoSchema);

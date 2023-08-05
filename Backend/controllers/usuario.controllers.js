@@ -1,6 +1,17 @@
 const Usuario = require('../models/Usuario.js');
 const bcryptjs = require ('bcryptjs');
 
+const getUser = async (req, res) =>{
+    const user = await Usuario.findOne({_id: req.params.id});
+    if (user.estado == { estado: false}){
+        res.json({
+            "message": "El usuario no existe"
+        })
+    } else {
+        res.json(user)
+    }
+}
+
 const getUsers = async(req, res)=>{
     const { hasta, desde } = req.query;
     const query = { estado: true };
@@ -8,9 +19,8 @@ const getUsers = async(req, res)=>{
         Usuario.countDocuments(query),
         Usuario.find(query)
             .skip( Number( desde ) )
-            .limit(Number( hasta ))
+            .limit( Number( hasta ))
     ]);
-
     res.json({
         total,
         usuarios
@@ -18,7 +28,6 @@ const getUsers = async(req, res)=>{
 }
 
 const postUsers = async (req, res)=>{
-
     const {nombre, email, password, rol} = req.body;
     const usuario = new Usuario({nombre, email, password, rol});
     const salt = bcryptjs.genSaltSync();
@@ -27,26 +36,23 @@ const postUsers = async (req, res)=>{
     res.json({
         "message":"post api",
         usuario
-    })
+    });
 }
 
 const deleteUsers = async (req, res)=>{
-    const {id} = req.params
+    const { id } = req.params
     const usuario = await Usuario.findByIdAndUpdate( id, { estado: false } );
-    res.json(usuario)
+    res.json(usuario);
 }
 
 const putUsers = async (req, res)=>{
     const { id } = req.params;
     const { _id, password, googleSignIn, ...resto } = req.body;
-
     if ( password ) {
         const salt = bcryptjs.genSaltSync();
         resto.password = bcryptjs.hashSync( password, salt );
     }
-
     const usuario = await Usuario.findByIdAndUpdate( id, resto, {new: true} );
-
     res.json({
         msg:"Usuario Actualizado",
         usuario : usuario
@@ -56,10 +62,11 @@ const putUsers = async (req, res)=>{
 const patchUsers = (req, res)=>{
     res.json({
         "message":"patch api"
-    })
+    });
 }
 
 module.exports = {
+    getUser,
     getUsers,
     postUsers,
     deleteUsers,

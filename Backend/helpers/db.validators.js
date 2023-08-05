@@ -1,3 +1,4 @@
+const Calzado = require('../models/Calzado.js');
 const Role = require ('../models/Role.js');
 const Usuario = require('../models/Usuario.js');
 
@@ -22,8 +23,16 @@ const userExistsById = async( id ) => {
     }
 }
 
+const calzadoExistsById = async (id) =>{
+    const calzadoExists = await Calzado.findById(id);
+    if( !calzadoExists ){
+        throw new Error(`El id (calzado) no existe ${id}`)
+    }
+}
+
 module.exports = {
     isValidRole,
     emailExiste,
-    userExistsById
+    userExistsById,
+    calzadoExistsById
 }

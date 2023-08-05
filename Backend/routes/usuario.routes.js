@@ -1,5 +1,5 @@
-const {Router} = require('express');
-const {check} = require('express-validator');
+const { Router } = require('express');
+const { check } = require('express-validator');
 const { validateDocuments } = require('../middlewares/validate.documents.js');
 const { validateJWT } = require('../middlewares/validate.jwt.js');
 const { isAdminRole } = require('../middlewares/validate.role.js');
@@ -12,8 +12,8 @@ router.get("/all", getUsers);
 router.post("/add",
         [
                 check('nombre', 'Nombre no es valido').not().isEmpty(),
-                check('password', 'Password debe ser de minimo 6 letras').isLength({min :6}),
-                check('email', 'El email no es valido').isEmail(),
+                check('password', 'Password debe ser de minimo 6 letras').isLength({min :6}).trim(),
+                check('email', 'El email no es valido').isEmail().trim().normalizeEmail().notEmpty(),
                 check('email').custom(emailExiste),
                 check('rol').custom(isValidRole),
                 validateDocuments

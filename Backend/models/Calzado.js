@@ -1,6 +1,6 @@
-const { Schema, model } = require('mongoose');
+const {Schema, model} = require('mongoose');
 
-const TipoCalzadoSchema = Schema({
+const CalzadoSchema = Schema({
     modelo: {
         type: String,
         required: [true, 'Model is required']
@@ -13,10 +13,6 @@ const TipoCalzadoSchema = Schema({
         type: String,
         required: [true, 'Color is required']
     },
-    tipoCalzado_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'TipoCalzado'
-    },
     talla: {
         type: Number,
         required: [true, 'Size is required']
@@ -27,7 +23,21 @@ const TipoCalzadoSchema = Schema({
     },
     imagenes: {
         type: [String]
-    }
+    },
+    estado: {
+        type: Boolean,
+        default: true
+    },
+    tipoCalzado_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'TipoCalzado',
+        required: true
+    },
+    usuario: {
+        type: Schema.Types.ObjectId,
+        ref: 'Usuario',
+        required: true
+    },
 });
 
-module.exports = model('TipoCalzado', TipoCalzadoSchema)
+module.exports = model ('Calzado', CalzadoSchema);

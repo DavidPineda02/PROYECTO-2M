@@ -12,7 +12,8 @@ class Server {
             usuarios:   '/usuarios',
             search:     '/search',
             uploads:    '/uploads',
-            calzados:   '/calzado'
+            calzados:   '/calzado',
+            tipo:       '/tipo' 
         }
         
         //Conectar a base de datos MONGODB

@@ -10,7 +10,7 @@ const router = Router();
 
 router.get("/all", getCalzados);
 
-router.get("/one", 
+router.get("/one/:id", 
     [
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom( calzadoExistsById ),
@@ -43,7 +43,6 @@ router.put("/upd/:id",
         validateJWT,
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom( calzadoExistsById ),
-        check('rol').custom(isValidRole),
         validateDocuments
     ], putCalzado);
 

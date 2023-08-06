@@ -1,9 +1,9 @@
 const TipoCalzado = require('../models/TipoCalzado.js');
 const { response } = require('express');
 
-const getTipoCalzado = async (req, res = response ) =>{
+const getTipoCalzado = async (req, res) =>{
     const tipo = await TipoCalzado.findOne({_id: req.params.id})
-    if (tipo.estado == { estado: false}){
+    if (!tipo.estado){
         res.json({
             "message": "La categoria esta agotado"
         })
@@ -22,14 +22,14 @@ const getTipoCalzados = async (req, res = response) =>{
             .limit( Number (donde))
     ]);
     res.json({
-        total, 
+        total,
         tipo
     });
 }
 
 const postTipoCalzado = async (req, res = response) =>{
     const { nombre, descripcion, estilo, genero, tallas_disponibles } = req.body;
-    const tipo = new Calzado({nombre, descripcion, estilo, genero, tallas_disponibles});
+    const tipo = new TipoCalzado({nombre, descripcion, estilo, genero, tallas_disponibles});
     await tipo.save();
     res.json({
         "message":"La categoria a guardado",
@@ -48,7 +48,7 @@ const putTipoCalzado = async (req, res = response) =>{
     const { modelo, precio, color, ...resto } = req.body;
     const tipo = await TipoCalzado.findByIdAndUpdate( id, resto, { new: true });
     res.json({
-        "message": "Calzado Actualizado",
+        "message": "Categoria Actualizada",
         tipo: tipo
     });
 }

@@ -3,7 +3,7 @@ const bcryptjs = require ('bcryptjs');
 
 const getUser = async (req, res) =>{
     const user = await Usuario.findOne({_id: req.params.id});
-    if (user.estado == { estado: false}){
+    if (!user.estado){
         res.json({
             "message": "El usuario no existe"
         })

@@ -5,7 +5,7 @@ const getCalzado = async (req, res = response ) =>{
     const calzado = await Calzado.findOne({_id: req.params.id})
         .populate('usuario', 'nombre')
         .populate('tipoCalzado', 'nombre')
-    if (calzado.estado == { estado: false}){
+    if (!calzado.estado){
         res.json({
             "message": "El calzado esta agotado"
         })

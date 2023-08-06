@@ -4,11 +4,17 @@ const { validateDocuments } = require('../middlewares/validate.documents.js');
 const { validateJWT } = require('../middlewares/validate.jwt.js');
 const { isAdminRole } = require('../middlewares/validate.role.js');
 const { isValidRole, emailExiste, userExistsById } = require('../helpers/db.validators.js');
-const { getUsers, postUsers, deleteUsers, putUsers, patchUsers} = require('../controllers/usuario.controllers.js');
+const { getUsers, postUsers, deleteUsers, putUsers, patchUsers, getUser} = require('../controllers/usuario.controllers.js');
 
 const router = Router();
 
 router.get("/all", getUsers);
+router.get("/one/:id", 
+        [
+                check('id', 'No es un id válido').isMongoId(),
+                check('id').custom( userExistsById ),
+                validateDocuments,
+        ], getUser);
 router.post("/add",
         [
                 check('nombre', 'Nombre no es valido').not().isEmpty(),
@@ -31,6 +37,7 @@ router.post("/add",
         router.put("/upd/:id",
         [
                 validateJWT,
+                isAdminRole,
                 check('id', 'No es un ObjectID MongoDB válido').isMongoId(),
                 check('id').custom( userExistsById ),
                 check('rol').custom(isValidRole),

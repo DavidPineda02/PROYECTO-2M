@@ -3,8 +3,6 @@ const { response } = require('express');
 
 const getCalzado = async (req, res = response ) =>{
     const calzado = await Calzado.findOne({_id: req.params.id})
-        .populate('usuario', 'nombre')
-        .populate('tipoCalzado', 'nombre')
     if (!calzado.estado){
         res.json({
             "message": "El calzado esta agotado"
@@ -20,8 +18,6 @@ const getCalzados = async (req, res = response) =>{
     const [ total, calzados ] = await Promise.all([
         Calzado.countDocuments(query),
         Calzado.find(query)
-            .populate('usuario', 'nombre')
-            .populate('tipoCalzado', 'nombre')
             .skip( Number (hasta))
             .limit( Number (donde))
     ]);
@@ -32,8 +28,14 @@ const getCalzados = async (req, res = response) =>{
 }
 
 const postCalzados = async (req, res = response) =>{
-    const { modelo, precio, color, talla, inventario } = req.body;
-    const calzado = new Calzado({modelo, precio, color, talla, inventario});
+    const { modelo, precio, color, talla, inventario, imagenes } = req.body;
+    const calzado = new Calzado({ userName: req.usuario.nombre, modelo, precio, color, talla, inventario, imagenes });
+    const calzadoDB = await Calzado.findOne({ modelo });
+    if ( calzadoDB ) {
+        return res.status(400).json({
+            msg: `El calzado ${ calzadoDB.modelo }, ya existe`
+        });
+    }
     await calzado.save();
     res.json({
         "message":"El calzado a guardado",

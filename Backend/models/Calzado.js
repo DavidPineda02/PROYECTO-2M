@@ -4,6 +4,11 @@ const CalzadoSchema = Schema({
     usuario: {
         type: Schema.Types.ObjectId,
         ref: 'Usuario',
+        unique: true
+    },
+    userName: {
+        type: String,
+        ref: 'Usuario',
         required: true
     },
     modelo: {
@@ -32,11 +37,6 @@ const CalzadoSchema = Schema({
     estado: {
         type: Boolean,
         default: true
-    },
-    tipoCalzado_id: {
-        type: Schema.Types.ObjectId,
-        ref: 'TipoCalzado',
-        required: true
     }
 });
 

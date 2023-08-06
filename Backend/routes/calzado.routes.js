@@ -2,7 +2,7 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 const { validateDocuments } = require('../middlewares/validate.documents.js');
 const { validateJWT } = require('../middlewares/validate.jwt.js');
-const { calzadoExistsById, isValidRole } = require('../helpers/db.validators.js');
+const { calzadoExistsById } = require('../helpers/db.validators.js');
 const { getCalzados, getCalzado, postCalzados, deleteCalzado, putCalzado } = require('../controllers/calzado.controllers.js');
 const { isAdminRole } = require('../middlewares/validate.role.js');
 
@@ -10,7 +10,7 @@ const router = Router();
 
 router.get("/all", getCalzados);
 
-router.get("/one/:id", 
+router.get("/one/:id",  
     [
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom( calzadoExistsById ),
@@ -41,6 +41,7 @@ router.delete("/del/:id",
 router.put("/upd/:id", 
     [
         validateJWT,
+        isAdminRole,
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom( calzadoExistsById ),
         validateDocuments

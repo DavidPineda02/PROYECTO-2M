@@ -28,24 +28,27 @@ const getTipoCalzados = async (req, res = response) =>{
 }
 
 const postTipoCalzado = async (req, res = response) =>{
-    const { nombre, descripcion, estilo, genero, tallas_disponibles } = req.body;
-    const tipo = new TipoCalzado({nombre, descripcion, estilo, genero, tallas_disponibles});
+    const { nombre, descripcion, estilo, genero, material, color, tallas_disponibles } = req.body;
+    const tipo = new TipoCalzado({nombre, descripcion, estilo, genero, material, color, tallas_disponibles});
     await tipo.save();
     res.json({
         "message":"La categoria a guardado",
-        tipo
+        tipo: tipo
     });
 }
 
 const deleteTipoCalzado = async (req, res = response) =>{
     const { id } = req.params;
     const tipo = await TipoCalzado.findByIdAndUpdate(id, { estado: false });
-    res.json(tipo);
+    res.json({
+        "message": "Tipo Calzado fue Eliminado",
+        tipo: tipo
+    });
 }
 
 const putTipoCalzado = async (req, res = response) =>{
     const { id } = req.params;
-    const { modelo, precio, color, ...resto } = req.body;
+    const { _id, ...resto } = req.body;
     const tipo = await TipoCalzado.findByIdAndUpdate( id, resto, { new: true });
     res.json({
         "message": "Categoria Actualizada",

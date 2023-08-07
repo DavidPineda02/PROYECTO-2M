@@ -1,5 +1,6 @@
 const Calzado = require('../models/Calzado.js');
 const Role = require ('../models/Role.js');
+const TipoCalzado = require('../models/TipoCalzado.js');
 const Usuario = require('../models/Usuario.js');
 
 const isValidRole = async(nombre= '')=>{
@@ -30,9 +31,17 @@ const calzadoExistsById = async (id) =>{
     }
 }
 
+const tipoCalzadoExistsById = async (id) =>{
+    const tipoCalzadoExists = await TipoCalzado.findById(id);
+    if( !tipoCalzadoExists ){
+        throw new Error(`El id (tipoCalzado) no existe ${id}`)
+    }
+}
+
 module.exports = {
     isValidRole,
     emailExiste,
     userExistsById,
-    calzadoExistsById
+    calzadoExistsById,
+    tipoCalzadoExistsById
 }

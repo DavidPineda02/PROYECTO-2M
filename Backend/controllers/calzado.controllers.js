@@ -28,8 +28,8 @@ const getCalzados = async (req, res = response) =>{
 }
 
 const postCalzados = async (req, res = response) =>{
-    const { modelo, precio, color, talla, inventario, imagenes } = req.body;
-    const calzado = new Calzado({ userName: req.usuario.nombre, modelo, precio, color, talla, inventario, imagenes });
+    const { modelo, precio, color, tallas, inventario, imagenes } = req.body;
+    const calzado = new Calzado({ userName: req.usuario.nombre, modelo, precio, color, tallas, inventario, imagenes });
     const calzadoDB = await Calzado.findOne({ modelo });
     if ( calzadoDB ) {
         return res.status(400).json({
@@ -38,7 +38,7 @@ const postCalzados = async (req, res = response) =>{
     }
     await calzado.save();
     res.json({
-        "message":"El calzado a guardado",
+        "message":"El calzado a sido guardado",
         calzado
     });
 }
@@ -46,12 +46,15 @@ const postCalzados = async (req, res = response) =>{
 const deleteCalzado = async (req, res = response) =>{
     const { id } = req.params;
     const calzado = await Calzado.findByIdAndUpdate(id, { estado: false });
-    res.json(calzado);
+    res.json({
+        "message":"Calzado Eliminado",
+        calzado:calzado
+    });
 }
 
 const putCalzado = async (req, res = response) =>{
     const { id } = req.params;
-    const { modelo, precio, color, ...resto } = req.body;
+    const { _id, ...resto } = req.body;
     const calzado = await Calzado.findByIdAndUpdate( id, resto, { new: true });
     res.json({
         "message": "Calzado Actualizado",

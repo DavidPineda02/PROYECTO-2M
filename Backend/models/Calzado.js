@@ -15,6 +15,16 @@ const CalzadoSchema = Schema({
         type: String,
         required: [true, 'Model is required']
     },
+    tipo: {
+        type: Schema.Types.ObjectId,
+        ref: 'tipoCalzado',
+        unique: true
+    },
+    tipoCalzado: {
+        type: String,
+        ref: 'tipoCalzado',
+        required: true
+    },
     precio: {
         type: Number,
         required: [true, 'Price is required']
@@ -23,8 +33,8 @@ const CalzadoSchema = Schema({
         type: String,
         required: [true, 'Color is required']
     },
-    talla: {
-        type: Number,
+    tallas: {
+        type: [Number],
         required: [true, 'Size is required']
     },
     inventario: {

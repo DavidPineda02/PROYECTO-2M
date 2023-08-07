@@ -25,6 +25,10 @@ const TipoCalzadoSchema = Schema({
     },
     tallas_disponibles: {
         type: [Number]
+    },
+    estado: {
+        type: Boolean,
+        default: true
     }
 });
 

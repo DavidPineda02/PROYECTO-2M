@@ -14,7 +14,7 @@ router.get("/one/:id",
     [
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom( calzadoExistsById ),
-        validateDocuments,
+        validateDocuments
     ], getCalzado);
 
 router.post("/add", 
@@ -23,7 +23,7 @@ router.post("/add",
         check('modelo', 'Modelo no es valido').not().isEmpty(),
         check('precio', 'Precio no valido').not().isEmpty(),
         check('color', 'Color no es valido').not().isEmpty(),
-        check('talla', 'Talla no valido').not().isEmpty(),
+        check('tallas', 'Talla no valido').not().isEmpty(),
         check('inventario', 'Inventario no valido').not().isEmpty(),
         check('imagenes', 'Imagenes no valido').not().isEmpty(),
         validateDocuments

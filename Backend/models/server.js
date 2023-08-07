@@ -13,7 +13,7 @@ class Server {
             search:     '/search',
             uploads:    '/uploads',
             calzados:   '/calzado',
-            tipo:       '/tipo' 
+            tipoCalzado:       '/tipoCalzado' 
         }
         
         //Conectar a base de datos MONGODB
@@ -52,7 +52,8 @@ class Server {
         this.app.use(this.paths.usuarios, require('../routes/usuario.routes.js'));
         this.app.use(this.paths.search, require('../routes/search.routes.js'));
         this.app.use(this.paths.uploads, require('../routes/upload.routes.js'));
-        this.app.use(this.paths.calzados, require('../routes/calzado.routes.js'))
+        this.app.use(this.paths.calzados, require('../routes/calzado.routes.js'));
+        this.app.use(this.paths.tipoCalzado, require('../routes/tipoCalzado.routes.js'))
     }
 
     listen(){

@@ -33,20 +33,16 @@ class Server {
     middlewares(){
         //cors
         this.app.use(cors());
-
         //Leer y parsear JSON en BODY
         this.app.use(express.json());
-
         //PUBLIC DIRECTORY
         this.app.use(express.static('public'));
-
         // Fileupload 
         this.app.use(fileUpload({
             useTempFiles : true,
             tempFileDir : '/tmp/'
         }));
     }
-
     routes(){
         this.app.use(this.paths.auth, require('../routes/auth.routes.js'));
         this.app.use(this.paths.usuarios, require('../routes/usuario.routes.js'));
@@ -55,13 +51,11 @@ class Server {
         this.app.use(this.paths.calzados, require('../routes/calzado.routes.js'));
         this.app.use(this.paths.tipoCalzado, require('../routes/tipoCalzado.routes.js'))
     }
-
     listen(){
         this.app.listen(this.port, ()=>{
             console.log(`SERVER RUNNING ON PORT: ${this.port}`);
         })
     }
-
 }
 
 module.exports = Server;

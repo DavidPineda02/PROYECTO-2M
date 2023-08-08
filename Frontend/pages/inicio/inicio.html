@@ -17,27 +17,18 @@
     ></script>
     <script src="https://kit.fontawesome.com/323dc45883.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../styles/inicio.css" />
+    
   </head>
   <body>
     <!-- <img src="../../assets/img/imgcarrusel1.avif" alt=""> -->
     <header>
-      <nav
-        class="navbar navbar-expand-lg z-3 position-absolute w-100 bg-transparent"
-      >
+      <nav class="navbar navbar-expand-lg z-3 position-absolute w-100 bg-opacity-50 bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand text-light" href="#"
             ><img src="../../assets/img/icononav.png" alt="" width="30" />
             <strong>DosMarias</strong>
           </a>
-          <button
-            class="navbar-toggler text-light"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           
@@ -48,30 +39,33 @@
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item mx-4">
                 <a
-                  class="nav-link active fs-4 text-light fw-bold"
+                  class="nav-link active fs-5 text-light fw-bold"
                   aria-current="page"
                   href="#"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item dropdown mx-4">
-                <a class="nav-link dropdown-toggle fs-4 text-light fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link dropdown-toggle fs-5 text-light fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   Catalogo
                 </a>
-                <ul class="dropdown-menu   " aria-labelledby="navbarDropdown">
-                    <div class="d-flex text-light">
-                  <li><a class="dropdown-item" href="#">Hombre</a></li>
-                  <li><a class="dropdown-item" href="#">Mujer</a></li>
-                  <li><a class="dropdown-item" href="#">Niño</a></li>
-                  <li><a class="dropdown-item" href="#">Niña</a></li></div>
-                </ul>
+                <ul class="dropdown-menu dropdown-menu-lg  multi-column" aria-labelledby="navbarDropdown">
+                  <div class="d-flex text-light row col-12 text-center">
+                      <li class="col-md-3 col-sm-6"><a class="dropdown-item text-light" href="../catalogo/index.html"><strong>Hombre</strong></a></li>
+                      <li class="col-md-3 col-sm-6"><a class="dropdown-item text-light" href="../catalogo/index.html"><strong>Mujer</strong></a></li>
+                      <li class="col-md-3 col-sm-6"><a class="dropdown-item text-light" href="../catalogo/index.html"><strong>Niño</strong></a></li>
+                      <li class="col-md-3 col-sm-6"><a class="dropdown-item text-light" href="../catalogo/index.html"><strong>Niña</strong></a></li>
+                  </div>
+              </ul>
+              
+              
               </li>
               <li class="nav-item mx-4">
-                <a class="nav-link fs-4 text-light fw-bold" href="#">Nosotros</a>
+                <a class="nav-link fs-5 text-light fw-bold" href="#">Nosotros</a>
               </li>
               <li class="nav-item mx-4">
-                <a class="nav-link fs-4 text-light fw-bold" href="#">Contacto</a>
+                <a class="nav-link fs-5 text-light fw-bold" href="#">Contacto</a>
               </li>
             </ul>
             <form class="d-flex mx-4 w-100" role="search">
@@ -81,7 +75,7 @@
                 placeholder=" Search"
                 aria-label="Search"
               />
-              <a class="btn btn-primary a mx-4 w-25" href="../login/login.html" type="submit">
+              <a class="btn btn-outline-light  mx-4 w-25" href="../login/login.html" type="submit">
                 <strong>Sign In</strong>
               </a>
             </form>
@@ -97,27 +91,36 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
               </div>
             <div class="carousel-inner">
-              <div class="carousel-item active">
+              <div class="carousel-item active img1">
                 <img
-                  src="../../assets/img/imgcarrusel1.avif"
+                  src="../../assets/img/carrousel1.jpg"
                   class="d-block w-100"
                   alt="..."
                   id="carrusel"
                 />
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item img2">
                 <img
-                  src="../../assets/img/imgcarrusel2.jpg"
+                  src="../../assets/img/carrousel2.jpg"
                   class="d-block w-100"
                   alt="..."
                   id="carrusel"
                 />
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item img3">
                 <img
-                  src="../../assets/img/imgcarrusel3.jpg"
+                  src="../../assets/img/carrousel3.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                  id="carrusel"
+                />
+              </div>
+              <div class="carousel-item img4">
+                <img
+                  src="../../assets/img/carrousel4.jpg"
                   class="d-block w-100"
                   alt="..."
                   id="carrusel"

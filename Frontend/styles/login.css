@@ -23,3 +23,20 @@ hr#linea {
     border: 0;
     border-top: 1px solid rgb(60, 9, 9);
 }
+
+/* También puedes especificar estilos para un campo de entrada específico */
+input[type="password"]::placeholder {
+    color: white;
+    font-weight: bold;
+}
+
+input[type="email"]::placeholder {
+    color: white;
+    font-weight: bold;
+}
+
+input[type="text"]::placeholder {
+    color: white;
+    font-weight: bold;
+}
+

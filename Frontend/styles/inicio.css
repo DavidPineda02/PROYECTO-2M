@@ -3,19 +3,13 @@
     margin: 0;
     border: 0;
     box-sizing: border-box;
-    
-}
-#carrusel{
-    
-    height: 67vh;
-    object-fit: cover;
-    
 }
 
-/* #person{
-    height: 40vh;
-    width: 51vh;
-} */
+#carrusel{
+    height: 67vh;
+    object-fit: cover;
+}
+
 .container-grid{
     
     display: grid;
@@ -26,11 +20,7 @@
     padding: 2rem;
     background-color: rgb(255, 255, 254);
     height: 25rem;
-
 }
-
-
-
 
 .items {
     background-color: rgb(164, 159, 159);
@@ -47,19 +37,18 @@
     background-color: rgba(0, 0, 0, 0.562);
     font-weight: 900;
     font-family: 'Holtwood One SC', serif;
-    
 }
 
 .item1{  
-    background-image: url("/assets/img/hombre.webp");
+    background-image: url("../assets/img/hombre.webp");
 }
 .item2{
-    background-image: url("/assets/img/mujer.jpeg"); 
+    background-image: url("../assets/img/mujer.jpeg"); 
 }
 .item3{
-    background-image: url("/assets/img/niño.avif");
+    background-image: url("../assets/img/niño.avif");
 }
 .item4{
-    background-image: url("/assets/img/niña.jpg");
+    background-image: url("../assets/img/niña.jpg");
 }
 

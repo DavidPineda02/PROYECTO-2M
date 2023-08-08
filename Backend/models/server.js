@@ -8,12 +8,12 @@ class Server {
         this.app = express();
         this.port = process.env.PORT
         this.paths = {
-            auth:       '/auth',
-            usuarios:   '/usuarios',
-            search:     '/search',
-            uploads:    '/uploads',
-            calzados:   '/calzado',
-            tipoCalzado:       '/tipoCalzado' 
+            auth:               '/auth',
+            usuarios:           '/usuarios',
+            search:             '/search',
+            uploads:            '/uploads',
+            calzados:           '/calzado',
+            tipoCalzado:        '/tipoCalzado' 
         }
         
         //Conectar a base de datos MONGODB

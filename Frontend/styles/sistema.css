@@ -1,0 +1,429 @@
+body, html{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;    
+    z-index: 10;
+    width: 100vw;
+}
+
+.container-grid{    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 20rem 20rem;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    padding: 2rem;
+    background-color: rgb(255, 255, 254);
+    height: 25rem;
+}
+
+.items {
+    background-color: rgb(164, 159, 159);
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    background-size: cover;
+    height: 380px;
+}
+
+
+/* Estilo personalizado para extender el menú desplegable */
+.dropdown-menu.dropdown-menu-lg {
+    position: absolute;
+    width: 100vw;
+    left: -312px;
+    top: 56px;
+    right: 0;
+    border: none;
+    box-shadow: none;
+    background-color: rgba(41, 38, 38, 0.5);
+    
+}
+/* background-color: rgba(34, 32, 32, 0.5); */
+@media (max-width: 767px) {
+    .dropdown-menu.dropdown-menu-lg {
+        position: static;
+        width: auto;
+        left: auto;
+        right: auto;
+        background-color: rgba(41, 38, 38, 0.5);
+    }
+}
+
+.venta{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+.ropa img{
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: lightgrey;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.colores{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cafe{
+    background-color: rgb(80, 46, 6) ;
+    border-radius: .5rem;
+}
+
+.vinotinto{
+    background-color: rgb(92, 9, 9) ;
+    border-radius: .5rem;
+}
+
+.coral{
+    background-color: #E4717A ;
+    border-radius: .5rem;
+}
+
+.azul-oscuro{
+    background-color: #010133 ;
+    border-radius: .5rem;
+}
+
+.negro{
+    background-color: #000000 ;
+    border-radius: .5rem;
+}
+
+.azul-cobalto{
+    background-color: #333c87 ;
+    border-radius: .5rem;
+}
+
+.azul-rey{
+    background-color: blue;
+    border-radius: .5rem;
+}
+
+.naranja{
+    background-color: orangered;
+    border-radius: .5rem;
+}
+
+.rojo{
+    background-color: red;
+    border-radius: .5rem;
+}
+
+.fucsia{
+    background-color: rgb(255, 0, 179);
+    border-radius: .5rem;
+}
+
+.rosado{
+    background-color: pink;
+    border-radius: .5rem;
+}
+
+.verde{
+    background-color: rgb(69, 161, 69);
+    border-radius: .5rem;
+}
+
+.violeta{
+    background-color: rgb(177, 113, 207);
+    border-radius: .5rem;
+}
+
+.morado-claro{
+    background-color: rgb(180, 133, 218);
+    border-radius: .5rem;
+}
+
+.rosadoo{
+    background-color: rgb(255, 113, 184);
+    border-radius: .5rem;
+}
+
+.blanco{
+    background-color: white;
+    border-radius: .5rem;
+}
+
+.amarillo-claro{
+    background-color: rgb(179, 179, 66);
+    border-radius: .5rem;
+}
+
+.gris{
+    background-color: grey;
+    border-radius: .5rem;
+}
+
+.coral-oscuro{
+    background-color: rgba(199, 85, 85, 0.829);
+    border-radius: .5rem;
+}
+
+.celeste-claro{
+    background-color: lightblue;
+    border-radius: .5rem;
+}
+
+.morado-oscuro{
+    background-color: rgba(50, 52, 155, 0.808);
+    border-radius: .5rem;
+}
+
+.rojo-oscuro{
+    background-color: rgb(202, 31, 31);
+    border-radius: .5rem;
+}
+
+.azul-medio{
+    background-color: rgb(33, 33, 119);
+    border-radius: .5rem;
+}
+
+.celeste{
+    background-color: rgb(74, 249, 255);
+    border-radius: .5rem;
+}
+
+.cobre{
+    background-color: #CB6D51;
+    border-radius: .5rem;
+}
+
+.piel{
+    background-color: #d9b59c;
+    border-radius: .5rem;
+}
+
+.verde-marino{
+    background-color: #1b7161;
+    border-radius: .5rem;
+}
+
+.gris-claro{
+    background-color: rgb(172, 141, 141);
+    border-radius: .5rem;
+}
+
+.cafe, .vinotinto, .coral, .azul-oscuro, .negro, .azul-cobalto, .azul-rey, .naranja, .rojo, .fucsia, .rosado, .verde, .violeta, .morado-claro, .rosadoo, .blanco, .amarillo-claro, .gris, .coral-oscuro, .celeste-claro, .morado-oscuro, .rojo-oscuro, .azul-medio, .celeste, .cobre, .verde-marino, .piel, .gris-claro{
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.ui-bookmark {
+    --icon-size: 24px;
+    --icon-secondary-color: rgb(53, 52, 52);
+    --icon-hover-color: rgb(97, 97, 97);
+    --icon-primary-color: gold;
+    --icon-circle-border: 1px solid var(--icon-primary-color);
+    --icon-circle-size: 35px;
+    --icon-anmt-duration: 0.3s;
+}
+
+.ui-bookmark input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.ui-bookmark .bookmark {
+    width: var(--icon-size);
+    height: auto;
+    fill: var(--icon-secondary-color);
+    cursor: pointer;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+}
+
+.bookmark::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    -webkit-box-shadow: 0 30px 0 -4px var(--icon-primary-color),
+        30px 0 0 -4px var(--icon-primary-color),
+        0 -30px 0 -4px var(--icon-primary-color),
+        -30px 0 0 -4px var(--icon-primary-color),
+        -22px 22px 0 -4px var(--icon-primary-color),
+        -22px -22px 0 -4px var(--icon-primary-color),
+        22px -22px 0 -4px var(--icon-primary-color),
+        22px 22px 0 -4px var(--icon-primary-color);
+    box-shadow: 0 30px 0 -4px var(--icon-primary-color),
+        30px 0 0 -4px var(--icon-primary-color),
+        0 -30px 0 -4px var(--icon-primary-color),
+        -30px 0 0 -4px var(--icon-primary-color),
+        -22px 22px 0 -4px var(--icon-primary-color),
+        -22px -22px 0 -4px var(--icon-primary-color),
+        22px -22px 0 -4px var(--icon-primary-color),
+        22px 22px 0 -4px var(--icon-primary-color);
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+.bookmark::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: var(--icon-circle-border);
+    opacity: 0;
+}
+
+/* actions */
+
+.ui-bookmark:hover .bookmark {
+    fill: var(--icon-hover-color);
+}
+
+.ui-bookmark input:checked+.bookmark::after {
+    -webkit-animation: circles var(--icon-anmt-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: circles var(--icon-anmt-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    -webkit-animation-delay: var(--icon-anmt-duration);
+    animation-delay: var(--icon-anmt-duration);
+}
+
+.ui-bookmark input:checked+.bookmark {
+    fill: var(--icon-primary-color);
+    -webkit-animation: bookmark var(--icon-anmt-duration) forwards;
+    animation: bookmark var(--icon-anmt-duration) forwards;
+    -webkit-transition-delay: 0.3s;
+    -o-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+
+.ui-bookmark input:checked+.bookmark::before {
+    -webkit-animation: circle var(--icon-anmt-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: circle var(--icon-anmt-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    -webkit-animation-delay: var(--icon-anmt-duration);
+    animation-delay: var(--icon-anmt-duration);
+}
+
+@-webkit-keyframes bookmark {
+    50% {
+        -webkit-transform: scaleY(0.6);
+        transform: scaleY(0.6);
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+}
+
+@keyframes bookmark {
+    50% {
+        -webkit-transform: scaleY(0.6);
+        transform: scaleY(0.6);
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+}
+
+@-webkit-keyframes circle {
+    from {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    90% {
+        width: var(--icon-circle-size);
+        height: var(--icon-circle-size);
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes circle {
+    from {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    90% {
+        width: var(--icon-circle-size);
+        height: var(--icon-circle-size);
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes circles {
+    from {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    to {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+@keyframes circles {
+    from {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    to {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}

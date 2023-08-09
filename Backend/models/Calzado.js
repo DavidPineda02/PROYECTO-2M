@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose');
+const {Schema, model, mongoose} = require('mongoose');
 
 const CalzadoSchema = Schema({
     usuario: {
@@ -16,7 +16,7 @@ const CalzadoSchema = Schema({
         required: [true, 'Model is required']
     },
     tipo: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'tipoCalzado',
         unique: true
     },

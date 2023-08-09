@@ -29,7 +29,8 @@ const getCalzados = async (req, res = response) =>{
 
 const postCalzados = async (req, res = response) =>{
     const { modelo, precio, color, tallas, inventario, imagenes } = req.body;
-    const calzado = new Calzado({ userName: req.usuario.nombre, modelo, precio, color, tallas, inventario, imagenes });
+    const tipoCalzadoNombre = req.tipoCalzado.nombre;
+    const calzado = new Calzado({ userName: req.usuario.nombre, modelo, precio, color, tallas, tipoCalzado:tipoCalzadoNombre ,inventario, imagenes });
     const calzadoDB = await Calzado.findOne({ modelo });
     if ( calzadoDB ) {
         return res.status(400).json({

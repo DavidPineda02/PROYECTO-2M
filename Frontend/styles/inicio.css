@@ -1,4 +1,4 @@
-*{
+body, html{
     padding: 0;
     margin: 0;
     border: 0;
@@ -6,12 +6,17 @@
 }
 
 #carrusel{
-    height: 67vh;
+    height: 60vh;
     object-fit: cover;
 }
 
-.container-grid{
-    
+header {
+    position: fixed;    
+    z-index: 10;
+    width: 100vw;
+}
+
+.container-grid{    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 20rem 20rem;
@@ -51,6 +56,30 @@
 .item4{
     background-image: url("../assets/img/niña.jpg");
 }
+
+.container_imagenes {
+    justify-content: center;
+}
+
+.container_items {
+    justify-content: center;
+    padding: 0;
+    margin: 0.5rem;
+    width: 23%;
+    box-sizing: border-box;
+}
+
+.img_1:hover,
+.img_2:hover,
+.img_3:hover,
+.img_4:hover {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.carruousel {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
 
 /* Estilo personalizado para extender el menú desplegable */
 .dropdown-menu.dropdown-menu-lg {

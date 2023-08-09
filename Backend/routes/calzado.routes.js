@@ -5,6 +5,7 @@ const { validateJWT } = require('../middlewares/validate.jwt.js');
 const { calzadoExistsById } = require('../helpers/db.validators.js');
 const { getCalzados, getCalzado, postCalzados, deleteCalzado, putCalzado } = require('../controllers/calzado.controllers.js');
 const { isAdminRole } = require('../middlewares/validate.role.js');
+const { validateTipoCalzado } = require('../middlewares/validate.tipoCalzado.js');
 
 const router = Router();
 
@@ -20,6 +21,7 @@ router.get("/one/:id",
 router.post("/add", 
     [
         validateJWT,
+        validateTipoCalzado,
         check('modelo', 'Modelo no es valido').not().isEmpty(),
         check('precio', 'Precio no valido').not().isEmpty(),
         check('color', 'Color no es valido').not().isEmpty(),
